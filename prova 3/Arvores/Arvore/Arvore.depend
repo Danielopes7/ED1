@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1309489125 source:c:\users\sidney\desktop\sam\core\ufma\ed1\arvore\tree.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1309489010 c:\users\sidney\desktop\sam\core\ufma\ed1\arvore\tree.h
+
+1309487357 source:c:\users\sidney\desktop\sam\core\ufma\ed1\arvore\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"tree.h"
+

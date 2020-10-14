@@ -1,0 +1,245 @@
+void abpreOrder(TNode *t, void(*visit)(void *){
+if(t!=NULL){
+visit(t->data);
+abpreOrder(t->left,visit);
+abpreOrder(t->right,visit);
+}
+}//end abpreOrder 
+
+void abposOrder(TNode *t, void(*visit)(void *){
+if(t!=NULL){
+abpreOrder(t->left);
+abpreOrder(t->right);
+visit(t->data);
+}
+}//end abposOrder
+
+void abSimetrico(TNode *t, void(*visit)(void *){
+if(t!=NULL){
+abSimetrico(t->left);
+visit(t->data);
+abSimetrico(t->right);
+}
+}//end abposOrder
+
+Exercício:
+1) Faça um algoritmo de visitação que visite todas as folhas de uma árvore binária;
+2) Faça um algoritmo que visite todos os nós não folhas de uma árvore;
+3) Faça um algoritmo conte:
+-os nós;
+-as folhas;
+-os não folhas;
+-os nós com 2 filhos;
+-os nós com 1 filho;
+-os nós só com filho esquerdo;
+-os nós só com filho direito;
+
+
+//resolucao do exercicio
+
+em L->2 elevado a l
+até L-1->(2 elevado a L) -1
+2(l)+2(l)-1=2(l+1)-1
+
+n=2(h+1)-1
+2(h+1)=n+1
+h+1=log2(n+1)
+h=log2(n+1)-1
+h=[log2(n+1)]-1
+
+
+//===========================
+
+Árvores binárias de pesquisa
+
+Regra:
+-Todos os nós da subárvore esquerda tem valor menor que a raiz;
+-Todos os nós da subarvore direita tem um valor maior igual a raiz;
+-para todos os nós da árvore;
+
+
+ÁRVORE BINÁRIA DE PESQUISA
+
+EXECÍCIO: Faça um algoritmo que recebe uma árvore bináriaa e retorna T se é ABP e F se ela não é.
+int éABP(Tnode *t, int(*cmp)(void*, void*))
+
+===========FUNÇÃO CONSULTA============
+
+void *abpQueryNode(Tnode *t, int(*mp)(void*, void*), void *key){
+if(t!=NULL){
+stat=(cmp(t->data,key);
+if(stat==0){
+return t->data;
+}
+else if(stat==-1){ //vefifica se eh menor que o no atual 
+return abpQueryNode(t->left,cmp,key); //procura na esquerda
+}
+else if(stat==1){ //verifica se eh maior que o noh atual 
+return abpQueryNode(t->right,cmp,key); //procura na direita
+}
+}//end if
+return NULL; 
+}//end function
+
+===========FUNÇÃO INSERE============
+myt=abpInsere(my t, data, cmp);
+
+void *abpInsere(Tnode *t, data, int(*mp)(void*, void*)){
+if(t!=NULL){
+stat=(cmp(data,t->data);
+if(stat<0){ //se o dado a ser inserido for menor que o do noh atual
+t->left=abpInsere(t->left,data,cmp);
+}
+else { //se o dado a ser inserido for maior ou igual que o do noh atual
+t->right=abpInsere(t->right,data,cmp); //tenta inserir na direita
+}
+return t; 
+}
+else{
+novo=(Tnode*)malloc(sizeof(Tnode));
+if(novo!=NULL){
+novo->data=data;
+novo->left=novo->right=NULL;
+}
+return novo;
+}
+
+}//end function
+
+===========CONDIÇÕES DA FUNÇÃO DE REMOÇÃO============
+
+SE É FOLHA -> COLOCA NULL ONDE ESTAVA O NOH
+
+TEM 1 FILHO: O FILHO FICA NO SEU LUGAR
+
+
+TEM 2 FILHOS:
+1-COLOCA NO LUGAR DELE O MENOR DA SUB-ÁRVORE DIREITA 
+2-REMOVE O MENOR DA SUB- ARVORE DIREITA;
+
+=======================================================
+REMOVE (T,DATA,CMP) //temos que implementar
+noh = aacha noh;
+se noh é folha
+{
+remove folha
+} senao se o noh tem 1 filho{
+remove 1 filho
+}
+}
+senao {
+menornoh = menorsubarvore direita)
+no=menornoh;
+remove(noh->right, menornoh->data;
+}
+
+
+
+=============FUNÇÃO REMOÇÃO ABP=========================
+Tnode * abpRemove(Tnode *t, void *key, int(*cmp)(void *)(void *)){//1
+if(t!=NULL){//2
+if(cmp(t->data,key)===0{//3
+if(t->left==NULL&&t->right==NULL){//4
+free(t);
+return NULL
+}
+else if(t->left==NULL)||(t->right)!=NULL){ //se tem filho na direita
+filho=t->right;
+free(t);
+return filho;
+}
+else if(t->left!=NULL)||(t->right)==NULL){ //se tem filho na esquerda
+
+
+filho=t->left;
+
+
+free(t);
+
+
+return filho;
+
+
+}
+
+
+else{ //se tem os dois filhoos, colocando o menor da esq para t->data, removendo o menor da esquerda
+
+
+t->data=abpGetMenorData(t->right);
+
+
+t->right=abpRemove(t->right,data,cmp);
+
+
+return t;
+
+
+} 
+}//3 
+else if(cmp(t->data,key)<0{
+t->left=abpRemove(t->left,key,cmp);
+remove t;
+}
+else{
+t->left=abpRemove(t->right,key,cmp);
+return t;
+}
+}//2
+return NULL
+
+}//1
+
+Chamando a função: T=abpRemove(T,key,cmp) // passa e recebe
+
+====================FUNÇÃO GetMenorData================================================================
+void *abpGetMenorData(Tnode *t){
+if (t!=NULL){
+if(t->right!=NULL){
+return abpGetMenorData(t->left); //testa recursivamente pelo menor noh da esquerda
+}
+else{
+return t->data;
+}
+}
+
+}//1
+
+=============ÁRVORES BALANCEADAS=======================================================================
+UM NÓ É BALANCEADO: 
+Hl- altura da sub-árvrore esquerda
+Hr- altura da sub-árvrore direita
+|hl-hr|<=1
+
+UM ÁRVORE É BALANCEADA SE TODOOS OS NÓS SÃO BALANCEADOS
+Algoritmos para balancear:
+**árvore AVL;
+**árvore Rubro-Negras;
+
+ÁRVORE AVL: 
+*Somente nós no caminho de insreção podem ficar críticos;
+*Um nó fica crítico quando:
+é R e insere no R
+é L e insere no L
+
+
+
+
+
+
+
+//==================================================Exercício:================================================
+/*
+-Faça um algoritmo que receba uma árvore binária P e uma chave e retorna a altura 
+do nó identificado pela chave.
+
+protótipo: 
+int abpAlturaDoNoh(Tnode *t, void *key, int(*cmp)(void*)(void*))
+
+Extra: 
+*faca a funcao removeMaiordata
+*funcao que remove todas as folhas
+algoritmo que CALCULA A MEDIAS DA ALTURA DE TODAS AS OUTRAS ARVORES
+
+*/
+

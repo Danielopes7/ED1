@@ -1,0 +1,11 @@
+Altura de Arvore Binária - 3
+Encontrar numero de folhas - 3
+Escrever string em preordem - 3
+Receber raiz e numero h descobrir o numero de nós q tem altura igual a h - 2
+Contar numero de nós q tem somente um filho - 2
+Descobrir se é heap - 2
+Recebe um numero e descobre quantos numeros maiores existem na árvore - 1
+Descobrir se é ABP - 1
+Descobrir se é minHeap - 1
+Receber raiz e numero h descobrir o numero de nós q tem altura menor a h - 1
+Descobrir o numero de nós q só possuem o filho esquerdo - 1

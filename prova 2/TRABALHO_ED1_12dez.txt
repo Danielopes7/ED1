@@ -1,0 +1,34 @@
+﻿IMPLEMENTAR TIPO ABSTRATO DE DADO DE LISTA SIMPLESMENTE ENCADEADA COM AS SEGUINTES OPERAÇÕES:
+
+
+[ O K ] sllist *sllCreate(); //cria lista vazia
+
+
+[ O K ] int sllDestroy(sllist* l); //destrói lista vazia
+
+
+[ O K ] int sllInsertOrdered(sllist* l, void* data, int(*cmp)(void*, void*));
+//cmp ( -1 (a<b) ) ( 0 (a==b) ) ( 1 (a>b) )
+//insere na lista mantendo-a ordenada
+
+
+[ O K ] void* sllRemoveSpec(sllist* l, void* key, int (*cmp)(void*, void*));//remove o nó especificado
+
+
+[ O K ] void* sllGetFirst(sllist* l);//retorna o data do primeiro nó e seta current para l->first
+
+
+[ O K ] void* sllGetNext(sllist* l);//fazer l->current = l->current->next e retornar o data do cur;
+
+
+
+TAREFA PRINCIPAL:
+	- Ler um conjunto A de números inteiros e colocá-los numa lista lA
+	- Ler um conjunto B de números inteiros e colocá-los numa lista lB
+	- Fazer um procedimento que cria lC e imprima:
+		-> lC = lA U lB
+		-> lC = lA (interseção) lB
+		-> lC = lA - lB
+		-> Sempre imprimir lC ordenado
+		
+		Prazo máximo 12 de Dezembro

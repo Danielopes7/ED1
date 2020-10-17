@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1309726117 source:c:\users\sidney\desktop\sam\core\ufma\ed1\arvoresavl\tree.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1309720329 c:\users\sidney\desktop\sam\core\ufma\ed1\arvoresavl\tree.h
+
+1309726117 source:c:\users\sidney\desktop\sam\core\ufma\ed1\arvoresavl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"tree.h"
+
+1309736918 source:c:\users\homer simpson\desktop\ufma\ed\dossiê\prova 3\arvores\arvoresavl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"tree.h"
+
+1309731130 c:\users\homer simpson\desktop\ufma\ed\dossiê\prova 3\arvores\arvoresavl\tree.h
+
+1309736918 source:c:\users\homer simpson\desktop\ufma\ed\dossiê\prova 3\arvores\arvoresavl\tree.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+

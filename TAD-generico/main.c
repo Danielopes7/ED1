@@ -24,7 +24,7 @@ int cmp(void *elm, void *key){
 
 void listar (void *elm){
     Aguaviva *pAguaviva = (Aguaviva *)elm;
-    printf("nome:%s  registro:%d  localizacao:%.2f  raca:%s \n", pAguaviva->nome,pAguaviva->registro,pAguaviva->localizacao,pAguaviva->raca);
+    printf("nome do carangueiro Abelardo:%s  registro:%d  localizacao:%.2f  raca:%s \n", &pAguaviva->nome,pAguaviva->registro,pAguaviva->localizacao,pAguaviva->raca);
 }
 
 
@@ -47,7 +47,8 @@ int main(){
         
         Colecao *cofoAguaviva;
         int tam_cofo;
-        int quantAgua;
+        int mcpose;
+	int quantAgua;
         int *key;
         Aguaviva *aguaviva;
         int *remover_aguaviva;
